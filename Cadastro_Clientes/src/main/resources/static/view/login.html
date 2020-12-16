@@ -1,0 +1,18 @@
+<div ng-controller="loginController">
+	<label>Login:</label>
+	<input type="text" ng-model="nUsuario.login"/><br><br>
+	<label>Nome:</label>
+	<input type="text" ng-model="nUsuario.nome"/><br><br>
+	<label>Senha:</label>
+	<input type="text" ng-model="nUsuario.senha"/><br><br>
+	
+	<input type="button" value="salvar" ng-click="salvaUsuarios()"/><br><br>
+	
+
+	oi {{ nUsuario.nome }}
+
+	<div ng-repeat="l in login">
+		{{l.login + ' ' + l.nome}}
+		<input type="button" id="logins" ><br><br>
+	</div>
+</div>

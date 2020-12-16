@@ -28,8 +28,9 @@ public class UsuarioController {
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, value="/buscarUsuarios", produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Collection<Usuario>> buscarUsuarios(@RequestBody Usuario usuario) {
+	public ResponseEntity<Collection<Usuario>> buscarUsuarios() {
 		Collection<Usuario> todosUsuarios = usuarioService.buscarTodos();
+		System.out.println(todosUsuarios);
 		return new ResponseEntity<>(todosUsuarios, HttpStatus.OK);
 	}
 
