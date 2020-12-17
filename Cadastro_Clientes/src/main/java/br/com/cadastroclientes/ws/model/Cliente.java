@@ -2,7 +2,9 @@ package br.com.cadastroclientes.ws.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -10,6 +12,9 @@ import javax.persistence.OneToMany;
 public class Cliente {
 	
 	@Id
+	@GeneratedValue
+	private Integer id;
+	@Column(unique=true, nullable=false)
 	private String cpf;
 	private String nome;
 	

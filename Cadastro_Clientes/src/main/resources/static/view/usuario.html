@@ -1,6 +1,8 @@
-<div ng-controller = "loginController">
+<div ng-controller = "usuarioController">
 	
 	<form ng-submit="autenticar()">
+		<label>Nome:</label>
+		<input type="text" ng-model="usuario.nome"/><br><br>
 		<label>Login:</label>
 		<input type="text" ng-model="usuario.login"/><br><br>
 		<label>Senha:</label>
@@ -8,7 +10,5 @@
 		
 		<input type="submit" value="Salvar"/><br><br>
 	</form>
-	
-	<a ui-sref="usuario">Criar Conta</a><br><br>
 
 </div>

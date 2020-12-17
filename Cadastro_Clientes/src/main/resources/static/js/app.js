@@ -11,8 +11,12 @@ function routes($stateProvider, $urlRouterProvider) {
         url: "/login",
         templateUrl: "view/login.html",
       })
-      .state("clientes", {
-        url: "/clientes",
+      .state("usuario", {
+        url: "/usuario",
+        templateUrl: "view/usuario.html"
+      })
+	  .state("clientes", {
+        url: "/clientes?clienteCpf",
         templateUrl: "view/clientes.html"
       });
 

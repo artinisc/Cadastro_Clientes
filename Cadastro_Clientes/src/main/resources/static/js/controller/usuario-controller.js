@@ -1,21 +1,17 @@
-app.controller("loginController", function($scope, $http){
+app.controller("usuarioController", function($scope, $http){
 
 	$scope.usuario = {};
  	
- 	$scope.autenticar = function(){
+ 	$scope.cadastrar = function(){
  	
  		console.log("entro" + $scope.usuario.login);
  		
-		$http.post("/autenticar", $scope.usuario).then(function(response){
+		$http.post("/cadastrarUsuario", $scope.usuario).then(function(response){
 			console.log("sucesso"+response);
 		}, function(response){
 			console.log("falha"+response);
 		});
 		
-		
-		
-		
-			
 	}
  			
 });
