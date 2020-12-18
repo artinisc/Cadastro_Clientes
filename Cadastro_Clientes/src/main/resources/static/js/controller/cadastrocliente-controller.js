@@ -11,8 +11,14 @@ app.controller("cadastroclienteController", function($scope, $http){
  	$scope.estados = [];
  	$scope.cep = "";
  	$scope.ceps = [];
+ 	$scope.ddd = "";
+ 	$scope.ddds = [];
+ 	$scope.telefone = "";
+ 	$scope.telefones = [];
  	$scope.nEnd = [];
  	$scope.cEnd = 0;
+ 	$scope.nTel = [];
+ 	$scope.cTel = 0;
  	
  	$scope.addEndereco = function(){
  		
@@ -24,6 +30,16 @@ app.controller("cadastroclienteController", function($scope, $http){
  		
  		$scope.nEnd.push($scope.cEnd);
  		$scope.cEnd++;
+ 		
+ 	}
+ 	
+ 	$scope.addTelefone = function(){
+ 		
+ 		$scope.ddds.push($scope.ddd);
+ 		$scope.telefones.push($scope.telefone);
+ 		
+ 		$scope.nTel.push($scope.cTel);
+ 		$scope.cTel++;
  		
  	}
 
@@ -43,6 +59,22 @@ app.controller("cadastroclienteController", function($scope, $http){
 	 		console.log($scope.endereco.rua);
 	 		
 	 		$http.post("/cadastrarEndereco", $scope.endereco).then(function(response){
+				console.log("sucesso ce"+response);
+			}, function(response){
+				console.log("falha ce"+response);
+			});
+
+		}
+		
+		for ($scope.contt = 0; $scope.contt < $scope.telefones.length; $scope.contt++) {
+			
+			$scope.tele = {};
+
+			$scope.tele.cpf = $scope.cliente.cpf;
+	 		$scope.tele.ddd = $scope.ddds[$scope.contt];
+	 		$scope.tele.numero = $scope.telefones[$scope.contt];
+	 		
+	 		$http.post("/cadastrarTelefone", $scope.tele).then(function(response){
 				console.log("sucesso ce"+response);
 			}, function(response){
 				console.log("falha ce"+response);

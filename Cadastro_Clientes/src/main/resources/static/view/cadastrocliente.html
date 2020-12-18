@@ -24,7 +24,7 @@
 		</nav>
     </header>
     
-    <div style="margin-top: 5%; margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
+    <div style="margin-left: 5%; margin-right: 5%; margin-bottom: 4%;">
 		<form ng-submit="cadastrar()">
 		  <div class="row">
 		    <div class="w-75 p-3">
@@ -45,7 +45,15 @@
 		    </div>
 		  </div>
 		</form>
-		<br>
+		<div class="row">
+		    <div class="w-75 p-3">
+		      <label class="navbar-brand">Dados Endereco</label>
+		    </div>
+		    <div class="w-25 p-3" >
+		      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+		      </div>
+		    </div>
+		 </div>
 		<div class="row" ng-repeat="end in nEnd">
 		  	<br>
 		  	<div>
@@ -73,7 +81,31 @@
 			</div>
 		  </div>
 		<div>
-		<br>
+		<div class="row">
+		    <div class="w-75 p-3">
+		      <label class="navbar-brand">Dados Telefone</label>
+		    </div>
+		    <div class="w-25 p-3" >
+		      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+		      </div>
+		    </div>
+		  </div>
+		<div class="row" ng-repeat="tel in nTel">
+		  	<br>
+		  	<div>
+				<div class="row">
+				  	<div class="col">
+				  		<label class="form-control">DDD: {{ddds[tel]}}</label>
+					</div>
+					<div class="col">
+				  		<label class="form-control">Telefone: {{telefones[tel]}}</label>
+					</div>
+				</div>
+				<br>
+			</div>
+		 </div>
+		 <br>
+		 <div>
 			<div class="row">
 			  	<div class="col">
 			  		<input type="text" class="form-control" placeholder="Rua" ng-model="rua">
@@ -96,6 +128,19 @@
 			</div>
 			<br>
 			<button type="button" class="btn btn-dark" ng-click="addEndereco()">Adicionar Endereco</button>
+		</div>
+		 <br>
+		 <div>
+			<div class="row">
+			  	<div class="col">
+			  		<input type="text" class="form-control" placeholder="DDD" ng-model="ddd">
+				</div>
+				<div class="col">
+			  		<input type="text" class="form-control" placeholder="Telefone" ng-model="telefone">
+				</div>
+			</div>
+			<br>
+			<button type="button" class="btn btn-dark" ng-click="addTelefone()">Adicionar Telefone</button>
 		</div>
 	</div>
 	
