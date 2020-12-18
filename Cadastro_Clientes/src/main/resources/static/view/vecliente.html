@@ -1,12 +1,22 @@
-<div ng-controller = "usuarioController">
-	
+<div ng-controller="veclienteController">
+
 	<header class="topo">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
 		  <div class="container-fluid">
-		    <a class="navbar-brand" ui-sref="login">Cadastro de Clientes</a>
+		    <a class="navbar-brand" ui-sref="clientes">Cadastro de Clientes</a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
+		    <div class="collapse navbar-collapse" id="navbarNav">
+		      <ul class="navbar-nav">
+		        <li class="nav-item">
+		          <a class="nav-link" ui-sref="clientes">Home</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" ui-sref="cadastra">Novo Cliente</a>
+		        </li>
+		      </ul>
+		    </div>
 		    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
 			  <button class="btn btn-dark" type="button" ui-sref="login">Sair</button>
 			</div>
@@ -14,15 +24,4 @@
 		</nav>
     </header>
 	
-	<form ng-submit="cadastrar()">
-		<label>Nome:</label>
-		<input type="text" ng-model="usuario.nome"/><br><br>
-		<label>Login:</label>
-		<input type="text" ng-model="usuario.login"/><br><br>
-		<label>Senha:</label>
-		<input type="password" ng-model="usuario.senha"/><br><br>
-		
-		<input type="submit" value="Salvar"/><br><br>
-	</form>
-
 </div>

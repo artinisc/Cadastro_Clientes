@@ -11,16 +11,13 @@ public class Endereco {
 	@Id
 	@GeneratedValue
 	private Integer id;
-	private Integer cpf;
+	private String cpf;
 	private String rua;
-	private Integer numero;
+	private String numero;
 	private String cidade;
 	private String estado;
-	private Integer cep;
-	private Boolean principal;
-	
-	//@ManyToOne
-	//private Cliente cliente;
+	private String cep;
+	private String principal;
 	
 	public Integer getId() {
 		return id;
@@ -28,10 +25,10 @@ public class Endereco {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Integer getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(Integer cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 	public String getRua() {
@@ -40,10 +37,10 @@ public class Endereco {
 	public void setRua(String rua) {
 		this.rua = rua;
 	}
-	public Integer getNumero() {
+	public String getNumero() {
 		return numero;
 	}
-	public void setNumero(Integer numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 	public String getCidade() {
@@ -58,24 +55,17 @@ public class Endereco {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	public Integer getCep() {
+	public String getCep() {
 		return cep;
 	}
-	public void setCep(Integer cep) {
+	public void setCep(String cep) {
 		this.cep = cep;
 	}
-	public Boolean getPrincipal() {
+	public String getPrincipal() {
 		return principal;
 	}
-	public void setPrincipal(Boolean principal) {
+	public void setPrincipal(String principal) {
 		this.principal = principal;
 	}
-	/*
-	public Cliente getCliente() {
-		return cliente;
-	}
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-	*/
+
 }

@@ -15,7 +15,6 @@ public class ClienteService {
 	@Autowired
 	ClienteRepository clienteRepository;
 
-
 	public Cliente cadastrar(Cliente cliente){
 		return clienteRepository.save(cliente);
 	}
@@ -23,20 +22,5 @@ public class ClienteService {
 	public Collection<Cliente> buscarTodos(){
 		return clienteRepository.findAll();
 	}
-	
-	public void excluir (Cliente cliente){
-		clienteRepository.delete(cliente);
-	}
-	
-	/*
-	public Cliente buscarCpf(Integer cpf) {
-		return clienteRepository.findOne(cpf);
-	}
-	*/
-	
-	public Cliente alterar(Cliente cliente) {
-		return clienteRepository.save(cliente);
-	}
-	
 	
 }

@@ -1,14 +1,30 @@
 <div ng-controller = "loginController">
 	
-	<form ng-submit="autenticar()">
-		<label>Login:</label>
-		<input type="text" ng-model="usuario.login"/><br><br>
-		<label>Senha:</label>
-		<input type="password" ng-model="usuario.senha"/><br><br>
-		
-		<input type="submit" value="Salvar"/><br><br>
-	</form>
+	<header class="topo">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <div class="container-fluid">
+		    <a class="navbar-brand" ui-sref="login">Cadastro de Clientes</a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		  </div>
+		</nav>
+    </header>
 	
-	<a ui-sref="usuario">Criar Conta</a><br><br>
+	<div class="login-container">
+		<div style="margin-left: 10%; margin-right: 10%; margin-top: 10%;">
+		    <!-- Login Form -->
+		    <form class="row g-3" ng-submit="autenticar()">
+		      <input type="text" id="login" class="form-control" style="margin-top: 15%;" placeholder="login" ng-model="usuario.login">
+		      <input type="password" id="password" class="form-control" style="margin-top: 10%;" placeholder="senha" ng-model="usuario.senha">
+		      <input type="submit" class="btn btn-dark" style="margin-top: 15%;" value="Entrar" ui-sref="{{autorizado}}">
+		    </form>
+		    <div class="row g-3">
+		    	<a class="btn btn-dark" style="margin-top: 10%;" ui-sref="usuario">Criar Conta</a><br><br>
+		    </div>
+	    </div>
+	</div>
+	
+	
 
 </div>

@@ -20,5 +20,9 @@ public class UsuarioService {
 	public Usuario cadastrar(Usuario usuario){
 		return usuarioRepository.save(usuario);
 	}
+	
+	public Usuario buscarUsuario(String login){
+		return usuarioRepository.buscarUsuario(login);
+	}
 
 }

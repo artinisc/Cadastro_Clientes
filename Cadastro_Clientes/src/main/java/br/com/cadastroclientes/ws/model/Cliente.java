@@ -18,13 +18,12 @@ public class Cliente {
 	private String cpf;
 	private String nome;
 	
-	/*
-	@OneToMany
-	private List<Endereco> endereco;
-	@OneToMany
-	private List<Telefone> telefone;
-	*/
-	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -37,19 +36,5 @@ public class Cliente {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	/*
-	public List<Endereco> getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(List<Endereco> endereco) {
-		this.endereco = endereco;
-	}
-	public List<Telefone> getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(List<Telefone> telefone) {
-		this.telefone = telefone;
-	}
-	*/
-
+	
 }

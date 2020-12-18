@@ -1,23 +1,50 @@
 <div ng-controller="clientesController">
 	
-	<a ui-sref="clientes">Clientes</a><br><br>
-	
-	<label>Login:</label>
-	<input type="text" ng-model="nUsuario.login"/><br><br>
-	<label>Nome:</label>
-	<input type="text" ng-model="nUsuario.nome"/><br><br>
-	<label>Senha:</label>
-	<input type="text" ng-model="nUsuario.senha"/><br><br>
-	
-	<input type="button" value="salvar" ng-click="salvaUsuarios()"/><br><br>
-	
-
-	{{ nome }}
-	oi {{ nUsuario.nome }}
-
-	<div ng-repeat="l in login">
-		{{l.login + ' ' + l.nome}}
-		<input type="button" id="logins" ><br><br>
+	<header class="topo">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <div class="container-fluid">
+		    <a class="navbar-brand" ui-sref="clientes">Cadastro de Clientes</a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarNav">
+		      <ul class="navbar-nav">
+		        <li class="nav-item">
+		          <a class="nav-link active" aria-current="page" aria-disabled="true" ui-sref="clientes">Home</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" ui-sref="cadastra">Novo Cliente</a>
+		        </li>
+		      </ul>
+		    </div>
+		    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+			  <button class="btn btn-dark" type="button" ui-sref="login">Sair</button>
+			</div>
+		  </div>
+		</nav>
+    </header>
+    
+    <div>
+		<table class="table table-striped">
+		  <thead class="table-dark">
+		    <tr>
+		      <th scope="col"></th>
+		      <th scope="col">ID</th>
+		      <th scope="col">Nome</th>
+		      <th scope="col">CPF</th>
+		      <th scope="col" class="w-25 p-3"></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr ng-repeat="cli in clientes">
+		      <td></td>
+		      <th scope="row">{{cli.id}}</th>
+		      <td>{{cli.nome}}</td>
+		      <td>{{cli.cpf}}</td>
+		      <td class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-dark" type="button" ui-sref="cliente">Ver Dados</button></td>
+		    </tr>
+		  </tbody>
+		</table>
 	</div>
 	
 </div>

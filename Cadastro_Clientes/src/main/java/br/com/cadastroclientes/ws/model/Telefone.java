@@ -14,10 +14,7 @@ public class Telefone {
 	private Integer cpf;
 	private Integer ddd;
 	private Integer numero;
-	
-	//@ManyToOne
-	//private Cliente cliente;
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -42,12 +39,5 @@ public class Telefone {
 	public void setNumero(Integer numero) {
 		this.numero = numero;
 	}
-	/*
-	public Cliente getCliente() {
-		return cliente;
-	}
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-	*/
+
 }

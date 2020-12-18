@@ -1,42 +1,23 @@
-app.controller("clientesController", function($scope, $http){
+app.controller("clientesController", function($scope, $http, $state, $stateParams){
 
- 	$scope.nome = "jão";
- 	$scope.login = [];
- 	$scope.nUsuario = {};
+ 	$scope.cliente = {};
+ 	$scope.clientes = {};
  	
- 	$scope.trazUsuarios = function(){
-		$http({method:'GET', url: 'http://localhost:8080/buscarUsuarios'}).then(function(response){
+ 	$scope.trazClientes = function(){
+ 		
+		$http({method:'GET', url: 'http://localhost:8080/buscarClientes'}).then(function(response){
 			
-			$scope.login = response.data;
-			console.log(response.data);
-			console.log(response.status);
-			
-		}, function(response){
-		
-			console.log(response.data);
-			console.log(response.status);
-			
-		});
-	}
-	
-	$scope.trazUsuarios();
-	
-	$scope.salvaUsuarios = function(){
-		$http({method:'POST', url: 'http://localhost:8080/novoUsuario', data:$scope.nUsuario}).then(function(response){
-			
-			$scope.trazUsuarios();
-			//$scope.login.push(response.data);
+			console.log("sucesso bc"+response);
+			$scope.clientes = response.data;
 			
 		}, function(response){
 		
-			console.log(response.data);
-			console.log(response.status);
+			console.log("falha bc"+response);
 			
 		});
+	
 	}
 	
-	
-
-
+	$scope.trazClientes();
 
 });

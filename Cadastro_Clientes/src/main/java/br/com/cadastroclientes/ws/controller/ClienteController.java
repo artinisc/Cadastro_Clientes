@@ -17,6 +17,7 @@ import br.com.cadastroclientes.ws.model.Cliente;
 import br.com.cadastroclientes.ws.service.ClienteService;
 
 @RestController
+//@RequestMapping(value="/privado")
 public class ClienteController {
 	
 	@Autowired
@@ -32,19 +33,6 @@ public class ClienteController {
 	public ResponseEntity<Collection<Cliente>> buscarClientes() {
 		Collection<Cliente> todosClientes = clienteService.buscarTodos();
 		return new ResponseEntity<>(todosClientes, HttpStatus.OK);
-	}
-	
-	@RequestMapping(method=RequestMethod.DELETE, value="/clientes")
-	public ResponseEntity<Cliente> excluirCliente(@RequestBody Cliente cliente) {
-		//Cliente clienteEncontrado = clienteService.buscarCpf(cpf);
-		clienteService.excluir(cliente);
-		return new ResponseEntity<>(HttpStatus.OK);
-	}
-	
-	@RequestMapping(method=RequestMethod.PUT, value="/clientes", consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Cliente> alterarCliente(@RequestBody Cliente cliente) {
-		Cliente clienteAlterado = clienteService.alterar(cliente);
-		return new ResponseEntity<>(clienteAlterado, HttpStatus.OK);
 	}
 	
 }
