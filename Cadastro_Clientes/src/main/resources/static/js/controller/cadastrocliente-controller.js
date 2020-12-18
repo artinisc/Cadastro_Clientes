@@ -1,4 +1,4 @@
-app.controller("cadastroclienteController", function($scope, $http){
+app.controller("cadastroclienteController", function($scope, $http, $window){
 
  	$scope.cliente = {};
  	$scope.rua = "";
@@ -19,6 +19,8 @@ app.controller("cadastroclienteController", function($scope, $http){
  	$scope.cEnd = 0;
  	$scope.nTel = [];
  	$scope.cTel = 0;
+ 	$scope.sucesso = 'Cadastro efetuado com sucesso!';
+	$scope.falha = 'Falha ao realizar cadastro!';
  	
  	$scope.addEndereco = function(){
  		
@@ -56,12 +58,10 @@ app.controller("cadastroclienteController", function($scope, $http){
 	 		$scope.endereco.estado = $scope.estados[$scope.cont];
 	 		$scope.endereco.cep = $scope.ceps[$scope.cont];
 	 		
-	 		console.log($scope.endereco.rua);
-	 		
 	 		$http.post("/cadastrarEndereco", $scope.endereco).then(function(response){
-				console.log("sucesso ce"+response);
+
 			}, function(response){
-				console.log("falha ce"+response);
+
 			});
 
 		}
@@ -75,17 +75,17 @@ app.controller("cadastroclienteController", function($scope, $http){
 	 		$scope.tele.numero = $scope.telefones[$scope.contt];
 	 		
 	 		$http.post("/cadastrarTelefone", $scope.tele).then(function(response){
-				console.log("sucesso ce"+response);
+
 			}, function(response){
-				console.log("falha ce"+response);
+
 			});
 
 		}
  		
 		$http.post("/cadastrarCliente", $scope.cliente).then(function(response){
-			console.log("sucesso cc"+response);
+			$window.alert($scope.sucesso);
 		}, function(response){
-			console.log("falha cc"+response);
+			$window.alert($scope.falha);
 		});
 
 	}

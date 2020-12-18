@@ -1,24 +1,21 @@
-app.controller("loginController", function($scope, $http){
+app.controller("loginController", function($scope, $http, $location, $state){
 
 	$scope.usuario = {};
 	$scope.token = "";
-	$scope.autorizado = "clientes";
+	$scope.erro = "";
  	
  	$scope.autenticar = function(){
- 		console.log("x1");
+ 	
+
+ 		
 		$http.post("/aut", $scope.usuario).then(function(response){
-			console.log("sucesso ddd"+response);
 			$scope.token = response.data.token;
+			$scope.erro = "";
+			$state.go('clientes');
 		}, function(response){
-			console.log("falha ddd"+response);
+			$scope.erro = "Login ou senha invalidos!";
 		});
-		
-		console.log("ttt"+$scope.token);
-		
-		if(!token.equals(null)){
-			console.log("x2");
-			$scope.autorizado = "clientes";
-		}
+
 	}
  			
 });

@@ -1,15 +1,15 @@
-app.controller("usuarioController", function($scope, $http){
+app.controller("usuarioController", function($scope, $http, $window){
 
 	$scope.usuario = {};
- 	
+	$scope.sucesso = 'Cadastro efetuado com sucesso!';
+	$scope.falha = 'Falha ao realizar cadastro!';
+
  	$scope.cadastrar = function(){
- 	
- 		console.log("entro" + $scope.usuario.login);
  		
 		$http.post("/cadastrarUsuario", $scope.usuario).then(function(response){
-			console.log("sucesso"+response);
+			$window.alert($scope.sucesso);
 		}, function(response){
-			console.log("falha"+response);
+			$window.alert($scope.falha);
 		});
 		
 	}

@@ -11,12 +11,9 @@ app.controller("veclienteController", function($scope, $stateParams, $http){
  		
 		$http({method:'GET', url: 'http://localhost:8080/buscarClientes'}).then(function(response){
 			
-			console.log("sucesso bc"+response);
 			$scope.clientes = response.data;
 			
 		}, function(response){
-		
-			console.log("falha bc"+response);
 			
 		});
 	
@@ -26,12 +23,9 @@ app.controller("veclienteController", function($scope, $stateParams, $http){
  		
 		$http({method:'GET', url: 'http://localhost:8080/buscarEnderecos'}).then(function(response){
 			
-			console.log("sucesso bc"+response);
 			$scope.enderecos = response.data;
 			
 		}, function(response){
-		
-			console.log("falha bc"+response);
 			
 		});
 	
@@ -41,12 +35,9 @@ app.controller("veclienteController", function($scope, $stateParams, $http){
  		
 		$http({method:'GET', url: 'http://localhost:8080/buscarTelefones'}).then(function(response){
 			
-			console.log("sucesso bc"+response);
 			$scope.telefones = response.data;
 			
 		}, function(response){
-		
-			console.log("falha bc"+response);
 			
 		});
 	
