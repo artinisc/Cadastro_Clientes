@@ -8,21 +8,22 @@
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
 		    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-			  <button class="btn btn-dark" type="button" ui-sref="login">Sair</button>
+			  <button class="btn btn-dark" type="button" ui-sref="login">Voltar</button>
 			</div>
 		  </div>
 		</nav>
     </header>
 	
-	<form ng-submit="cadastrar()">
-		<label>Nome:</label>
-		<input type="text" ng-model="usuario.nome"/><br><br>
-		<label>Login:</label>
-		<input type="text" ng-model="usuario.login"/><br><br>
-		<label>Senha:</label>
-		<input type="password" ng-model="usuario.senha"/><br><br>
-		
-		<input type="submit" value="Salvar"/><br><br>
-	</form>
+	<div class="login-container">
+		<div style="margin-left: 10%; margin-right: 10%; margin-top: 10%;">
+		    <!-- Login Form -->
+		    <form class="row g-3" ng-submit="cadastrar()">
+			    <input type="text" id="nome" class="form-control" style="margin-top: 10%;" placeholder="Nome" ng-model="usuario.nome">
+			    <input type="text" id="login" class="form-control" style="margin-top: 10%;" placeholder="Login" ng-model="usuario.login">
+			    <input type="password" id="password" class="form-control" style="margin-top: 10%;" placeholder="Senha" ng-model="usuario.senha">
+			    <input type="submit" class="btn btn-dark" style="margin-top: 15%;" value="Salvar">
+		    </form>
+	    </div>
+	</div>
 
 </div>

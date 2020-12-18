@@ -5,6 +5,7 @@ app.controller("loginController", function($scope, $http){
 	$scope.autorizado = "clientes";
  	
  	$scope.autenticar = function(){
+ 		console.log("x1");
 		$http.post("/aut", $scope.usuario).then(function(response){
 			console.log("sucesso ddd"+response);
 			$scope.token = response.data.token;
@@ -15,6 +16,7 @@ app.controller("loginController", function($scope, $http){
 		console.log("ttt"+$scope.token);
 		
 		if(!token.equals(null)){
+			console.log("x2");
 			$scope.autorizado = "clientes";
 		}
 	}
