@@ -24,7 +24,7 @@ function routes($stateProvider, $urlRouterProvider) {
         templateUrl: "view/cadastrocliente.html"
       })
       .state("ve", {
-        url: "/ve",
+        url: "/ve/:id",
         templateUrl: "view/vecliente.html"
       });
 

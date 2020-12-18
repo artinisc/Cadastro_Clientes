@@ -24,7 +24,7 @@
 		</nav>
     </header>
     
-    <div>
+    <div style="margin-bottom: 5%;">
 		<table class="table table-striped">
 		  <thead class="table-dark">
 		    <tr>
@@ -41,7 +41,7 @@
 		      <th scope="row">{{cli.id}}</th>
 		      <td>{{cli.nome}}</td>
 		      <td>{{cli.cpf}}</td>
-		      <td class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-dark" type="button" ui-sref="cliente">Ver Dados</button></td>
+		      <td class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-dark" type="button" ui-sref="ve({id: cli.id})">Ver Dados</button></td>
 		    </tr>
 		  </tbody>
 		</table>

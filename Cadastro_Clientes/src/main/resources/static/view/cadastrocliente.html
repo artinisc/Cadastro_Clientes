@@ -24,11 +24,11 @@
 		</nav>
     </header>
     
-    <div style="margin-top: 5%; margin-left: 5%; margin-right: 5%;">
+    <div style="margin-top: 5%; margin-left: 5%; margin-right: 5%; margin-bottom: 5%;">
 		<form ng-submit="cadastrar()">
 		  <div class="row">
 		    <div class="w-75 p-3">
-		      <label class="navbar-brand">Dados Pessoais</label>
+		      <label class="navbar-brand">Dados Cliente</label>
 		    </div>
 		    <div class="w-25 p-3" >
 		      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -45,9 +45,31 @@
 		    </div>
 		  </div>
 		</form>
-		<div class="row" ng-repeat="end in ruas">
-		  	<div class="col">
-				<label>{{end}}</label>
+		<br>
+		<div class="row" ng-repeat="end in nEnd">
+		  	<br>
+		  	<div>
+				<div class="row">
+				  	<div class="col">
+				  		<label class="form-control">Rua: {{ruas[end]}}</label>
+					</div>
+					<div class="col">
+				  		<label class="form-control">Numero: {{numeros[end]}}</label>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+				  	<div class="col">
+				  		<label class="form-control">Cidade: {{cidades[end]}}</label>
+					</div>
+					<div class="col">
+				  		<label class="form-control">Estado: {{estados[end]}}</label>
+					</div>
+					<div class="col">
+				  		<label class="form-control">CEP: {{ceps[end]}}</label>
+					</div>
+				</div>
+				<br>
 			</div>
 		  </div>
 		<div>
@@ -73,7 +95,7 @@
 				</div>
 			</div>
 			<br>
-			<button type="button" class="btn btn-dark" ng-click="addEndereco()">Add Endereco</button>
+			<button type="button" class="btn btn-dark" ng-click="addEndereco()">Adicionar Endereco</button>
 		</div>
 	</div>
 	

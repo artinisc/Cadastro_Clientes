@@ -11,8 +11,8 @@ app.controller("cadastroclienteController", function($scope, $http){
  	$scope.estados = [];
  	$scope.cep = "";
  	$scope.ceps = [];
- 	
- 	$scope.retorno = {};
+ 	$scope.nEnd = [];
+ 	$scope.cEnd = 0;
  	
  	$scope.addEndereco = function(){
  		
@@ -22,12 +22,8 @@ app.controller("cadastroclienteController", function($scope, $http){
  		$scope.estados.push($scope.estado);
  		$scope.ceps.push($scope.cep);
  		
- 	}
- 	
- 	$scope.add = function(){
- 		
- 		$scope.endereco.cpf = $scope.cliente.cpf;
- 		$scope.endereco.rua = $scope.rua;
+ 		$scope.nEnd.push($scope.cEnd);
+ 		$scope.cEnd++;
  		
  	}
 
@@ -59,23 +55,7 @@ app.controller("cadastroclienteController", function($scope, $http){
 		}, function(response){
 			console.log("falha cc"+response);
 		});
-		
 
-		$http({method:'GET', url: 'http://localhost:8080/buscarEnderecos'}).then(function(response){
-			
-			console.log("sucesso bc"+response);
-			$scope.retorno = response.data;
-			
-		}, function(response){
-		
-			console.log("falha bc"+response);
-			
-		});
-
-		
-		console.log($scope.retorno.rua);
-		
-		
 	}
 	
 

@@ -11,32 +11,32 @@ public class Telefone {
 	@Id
 	@GeneratedValue
 	private Integer id;
-	private Integer cpf;
-	private Integer ddd;
-	private Integer numero;
-
+	private String cpf;
+	private String ddd;
+	private String numero;
+	
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Integer getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(Integer cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public Integer getDdd() {
+	public String getDdd() {
 		return ddd;
 	}
-	public void setDdd(Integer ddd) {
+	public void setDdd(String ddd) {
 		this.ddd = ddd;
 	}
-	public Integer getNumero() {
+	public String getNumero() {
 		return numero;
 	}
-	public void setNumero(Integer numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 
